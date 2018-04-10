@@ -10,7 +10,7 @@ class route{
     public $action;
 
     public function __construct(){
-        //$_SERVER['REQUEST_URI'] = '/frame2/home/index/index';//REQUEST_URI
+        //$_SERVER['REQUEST_URI'] = '/frame/home/index/index';//REQUEST_URI
         if( isset($_SERVER['REQUEST_URI'])&&$_SERVER['REQUEST_URI']!='/' ){
             $path = $_SERVER['REQUEST_URI'];
             $url = explode('/', trim($path, '/'));
