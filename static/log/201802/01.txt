@@ -1,0 +1,14 @@
+{"time":"2018-02-01 16:20:03","content":"测试日志"}
+
+{"time":"2018-02-01 16:20:09","content":"测试日志"}
+
+{"time":"2018-02-01 16:58:11","content":"未找到模板文件 D://web//nginx//html//frame2//core//error//404.html"}
+
+{"time":"2018-02-01 16:59:00","content":"未找到模板文件 D://web//nginx//html//frame2//core//error//404.html"}
+
+{"time":"2018-02-01 17:04:01","content":"未找到[配置文件] D:/web/nginx/html/frame2/core/config/12.inc.php"}
+
+{"time":"2018-02-01 17:06:25","content":"未找到[配置文件] D:/web/nginx/html/frame2/core/config/12.inc.php"}
+
+{"time":"2018-02-01 17:43:56","content":"test() 为私有方法,不可直接调用"}
+
