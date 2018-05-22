@@ -40,17 +40,16 @@ function transcode($_str, $_key){
     $j2 = 0;
     for($k = 0; $k < strlen($_str); $k++){
         if($j2 * 7 / 10 % 10 != 0) {
-            $_str[$k] = $_str[$k] ^ $_key[$j];
-		}else{
-			$_str[$k] = ~($_str[$k]);
+	    $_str[$k] = $_str[$k] ^ $_key[$j];
+	}else{
+	    $_str[$k] = ~($_str[$k]);
         }
-
-		$j++;
-		$j2++;
-		if($j == strlen($_key)){
-			$j = 0;
-		}
+	$j++;
+	$j2++;
+	if($j == strlen($_key)){
+	   $j = 0;
 	}
+    }
     return $_str;
 }/*transcode() end */
 
