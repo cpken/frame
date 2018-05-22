@@ -186,4 +186,30 @@ class mongodb implements \core\library\db{
 
         return $cursor[0]->n;
     }/*count() end*/
+    
+    /*
+    * 原子操作-修改并返回修改后的结果, 没有就写入.
+    */
+    public function findAndModify($table='', $filter = [], $update = []){
+        $name = explode('.', $table);
+        try{            
+            $command = new \MongoDB\Driver\Command([                
+                'findAndModify'=> $name[1], //collectionName
+                'query' => $filter, //查询条件
+                'update'=> $update,
+                'new' => true,
+                'upsert'=> true
+            ]);
+            $response = $this->mongo->executeCommand($name[0], $command)->toArray();
+        }catch(\MongoDB\Driver\Exception $e){
+            \core\library\log::write($e->getMessage());
+            \core\library\error::show($e->getMessage());
+            die;
+        }
+        if ( count($response) ) {
+            return $response;
+        } else {
+            return $response[0];
+        }
+    }/*findAndModify() end*/
 }//mongodb{} end
